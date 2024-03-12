@@ -1,9 +1,11 @@
 package biblioteka;
 
+import java.util.ArrayList;
+
 public class Knjiga {
 	private long isbn;
 	private String naslov;
-	private String autori;
+	private ArrayList<Autor> autor;
 	private String izdavac;
 	private int izdanje;
 	public long getIsbn() {
@@ -18,11 +20,11 @@ public class Knjiga {
 	public void setNaslov(String naslov) {
 		this.naslov = naslov;
 	}
-	public String getAutori() {
-		return autori;
+	public ArrayList<Autor> getAutor() {
+		return autor;
 	}
-	public void setAutori(String autori) {
-		this.autori = autori;
+	public void setAutor(ArrayList<Autor> autor) {
+		this.autor = autor;
 	}
 	public String getIzdavac() {
 		return izdavac;
