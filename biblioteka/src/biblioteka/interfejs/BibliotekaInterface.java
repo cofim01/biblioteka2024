@@ -2,6 +2,7 @@ package biblioteka.interfejs;
 
 import java.util.List;
 
+import biblioteka.Autor;
 import biblioteka.Knjiga;
 
 public interface BibliotekaInterface {
