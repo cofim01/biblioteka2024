@@ -1,6 +1,7 @@
 package biblioteka;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Knjiga {
 	private long isbn;
@@ -38,6 +39,26 @@ public class Knjiga {
 	public void setIzdanje(int izdanje) {
 		this.izdanje = izdanje;
 	}
+	@Override
+	public String toString() {
+		return "Knjiga [isbn=" + isbn + ", naslov=" + naslov + ", autor=" + autor + ", izdavac=" + izdavac
+				+ ", izdanje=" + izdanje + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Knjiga other = (Knjiga) obj;
+		return Objects.equals(autor, other.autor) && isbn == other.isbn && izdanje == other.izdanje
+				&& Objects.equals(izdavac, other.izdavac) && Objects.equals(naslov, other.naslov);
+	}
+	
+	
 	
 	
 	
