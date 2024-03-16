@@ -13,12 +13,20 @@ public class Knjiga {
 		return isbn;
 	}
 	public void setIsbn(long isbn) {
+		if (isbn < 1000000000 || isbn >  9999999999999L)
+			throw new IllegalArgumentException("ISBN mora imati bar 10 cifara");
 		this.isbn = isbn;
 	}
 	public String getNaslov() {
 		return naslov;
 	}
 	public void setNaslov(String naslov) {
+		if(naslov==null) {
+			throw new NullPointerException("Naslov ne sme biti null");
+		}
+		if(naslov.equals("")) {
+			throw new IllegalArgumentException("Naslov ne sme biti prazan string");
+		}
 		this.naslov = naslov;
 	}
 	public ArrayList<Autor> getAutor() {
@@ -31,12 +39,21 @@ public class Knjiga {
 		return izdavac;
 	}
 	public void setIzdavac(String izdavac) {
+		if(izdavac==null) {
+			throw new NullPointerException("Izdavac ne sme biti null");
+		}
+		if(izdavac.equals("")) {
+			throw new IllegalArgumentException("Izdavac ne sme biti prazan string");
+		}
 		this.izdavac = izdavac;
 	}
 	public int getIzdanje() {
 		return izdanje;
 	}
 	public void setIzdanje(int izdanje) {
+		if(izdanje<1) {
+			throw new IllegalArgumentException("Izdanje mora biti 1 ili vece");
+		}
 		this.izdanje = izdanje;
 	}
 	@Override
