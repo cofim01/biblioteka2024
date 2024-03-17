@@ -4,12 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
+import org.easymock.EasyMockExtension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import biblioteka.Knjiga;
+
 
 public abstract class BibliotekaInterfaceTest {
 	BibliotekaInterface b;
