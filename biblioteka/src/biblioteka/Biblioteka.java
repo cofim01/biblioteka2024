@@ -7,8 +7,10 @@ import biblioteka.interfejs.BibliotekaInterface;
 
 public class Biblioteka implements BibliotekaInterface {
 	
-	private List<Knjiga> knjige;
+	private List<Knjiga> knjige=new ArrayList<>();
 	
+	
+			
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
 		if(knjiga==null) {
@@ -43,10 +45,11 @@ public class Biblioteka implements BibliotekaInterface {
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Autor autor, long ISBN, String naslov, String izdavac) {
 		if(autor==null && ISBN<=0 && naslov==null && izdavac==null)
-			throw new IllegalArgumentException("Morati uneti bar neki kriterijum za pretragu");
+			throw new IllegalArgumentException("Morate uneti bar neki kriterijum za pretragu");
 
 		
 		List<Knjiga> rezultati=new ArrayList<>();
+		
 		for (Knjiga k: knjige) {
 			if(k.getNaslov().toUpperCase().contains(naslov.toUpperCase())) {
 				rezultati.add(k);
@@ -55,5 +58,7 @@ public class Biblioteka implements BibliotekaInterface {
 		}
 		return rezultati;
 	}
+	
+	
 	
 }
